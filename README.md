@@ -8,7 +8,7 @@
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
   <!-- <a href="https://github.com/capawesome-team/capacitor-nfc/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capawesome-team/capacitor-nfc/CI/main?style=flat-square" /></a> -->
-  <a href="https://github.com/capawesome-team/capacitor-nfc/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/license/capawesome-team/capacitor-nfc?style=flat-square" /></a>
+  <a href="https://github.com/capawesome-team/capacitor-nfc"><img src="https://img.shields.io/github/license/capawesome-team/capacitor-nfc?style=flat-square" /></a>
 <!-- <br> -->
   <!-- <a href="https://www.npmjs.com/package/@capawesome/capacitor-nfc"><img src="https://img.shields.io/npm/dw/@capawesome/capacitor-nfc?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capawesome/capacitor-nfc"><img src="https://img.shields.io/npm/v/@capawesome/capacitor-nfc?style=flat-square" /></a> -->
