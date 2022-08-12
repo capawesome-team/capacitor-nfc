@@ -28,13 +28,15 @@ This project is available as **Sponsorware**.
 > Sponsorware is a release strategy for open-source software that enables developers to be compensated for their open-source work with fewer downsides than traditional open-source funding models. ([Source](https://github.com/sponsorware/docs))
 
 This means...
+
 - The source code will be published as soon as [our GitHub Sponsors goal](https://github.com/sponsors/capawesome-team) is reached.
 - Any GitHub sponsor with a [sponsorware tier](https://github.com/sponsors/capawesome-team?frequency=recurring) (starting from $15 per month) gets **immediate access** to our sponsors-only repository and can start using the project right away.
 
 ## Terms
 
 This project is licensed under the terms of the MIT license.  
-However, we kindly ask you to respect our **fair use policy**:  
+However, we kindly ask you to respect our **fair use policy**:
+
 - Please **don't distribute the source code** of the sponsors-only repository. You may freely use it for public, private or commercial projects, privately fork or mirror it, but please don't make the source code public, as it would counteract the sponsorware strategy.
 - If you cancel your subscription, you're automatically removed as a collaborator and will miss out on all future updates. However, **you may use the latest version that's available to you as long as you like**.
 
@@ -42,10 +44,10 @@ However, we kindly ask you to respect our **fair use policy**:
 
 This plugin is still **under development**. We have already received many feature requests. This is our approximate roadmap:
 
-| Q3 2022 | Q4 2022 |
-| ------- | ------- | 
+| Q3 2022                     | Q4 2022                |
+| --------------------------- | ---------------------- |
 | - Capacitor 4 compatibility | - Raw commands support |
-| | - Android Reader Mode |
+|                             | - Android Reader Mode  |
 
 ⚠️ **Disclaimer**: This roadmap does not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and is intended to outline the general development plans. You should not rely on this roadmap to make any sponsorship decision.
 
@@ -58,39 +60,44 @@ This plugin is still **under development**. We have already received many featur
 1. **Can I read and write this specific tag with my device?**  
    This always depends on your device and the specific tag. The easiest way to find out is to download our demo app and give it a try.
 1. **What do I do when I have a feature request?**  
-   Please submit your feature request [here](https://github.com/capawesome-team/capacitor-nfc-sponsorware/issues/new/choose). We will then review it and possibly put it on our roadmap.
+   Please submit your feature request [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will then review it and possibly put it on our roadmap.
 1. **What do I do when I have found a bug?**  
-   Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc-sponsorware/issues/new/choose). We will take a look at it as soon as possible.
+   Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will take a look at it as soon as possible.
 
 ## Installation
 
 As long as the project is available as [Sponsorware](#sponsorware), the project will be distributed via GitHub packages.
 
 1. Log in to GitHub package registry ([GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)):
-    ```
-    $ npm login --scope=@capawesome-team --registry=https://npm.pkg.github.com
 
-    > Username: USERNAME
-    > Password: TOKEN
-    > Email: PUBLIC-EMAIL-ADDRESS
-    ```
+   ```
+   $ npm login --scope=@capawesome-team --registry=https://npm.pkg.github.com
+
+   > Username: USERNAME
+   > Password: TOKEN
+   > Email: PUBLIC-EMAIL-ADDRESS
+   ```
+
 1. In the same directory as your `package.json` file, create or edit an `.npmrc` file to include the following line ([GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)):
-    ```
-    @capawesome-team:registry=https://npm.pkg.github.com
-    ```
+   ```
+   @capawesome-team:registry=https://npm.pkg.github.com
+   ```
 1. Install the package with Capacitor 3:
-    ```bash
-    npm install @capawesome-team/capacitor-nfc@latest
-    npx cap sync
-    ```
-    Install the package with Capacitor 4:
-    ```bash
-    npm install @capawesome-team/capacitor-nfc@next
-    npx cap sync
-    ```
 
-    🆘 If you have any problems please [contact us by mail](mailto:support@capawesome.io) or [create a GitHub discussion](https://docs.github.com/en/discussions/quickstart#creating-a-new-discussion) in this repository.  
-    ⚠️ **Attention**: Be careful not to disclose your npm auth token! If you have any questions (CI configuration etc.) please let us know.
+   ```bash
+   npm install @capawesome-team/capacitor-nfc@latest
+   npx cap sync
+   ```
+
+   Install the package with Capacitor 4:
+
+   ```bash
+   npm install @capawesome-team/capacitor-nfc@next
+   npx cap sync
+   ```
+
+   🆘 If you have any problems please [contact us by mail](mailto:support@capawesome.io) or [create a GitHub discussion](https://docs.github.com/en/discussions/quickstart#creating-a-new-discussion) in this repository.  
+   ⚠️ **Attention**: Be careful not to disclose your npm auth token! If you have any questions (CI configuration etc.) please let us know.
 
 ### Android
 
@@ -145,7 +152,7 @@ const createNdefTextRecord = async () => {
 const write = async () => {
   const record = createNdefTextRecord();
 
-  Nfc.addListener('nfcTagScanned', async event => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
     await Nfc.write({ message: { records: [record] } });
   });
 
@@ -153,8 +160,8 @@ const write = async () => {
 };
 
 const read = async () => {
-  return new Promise(resolve => {
-    Nfc.addListener('nfcTagScanned', async event => {
+  return new Promise((resolve) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
       resolve(event.nfcTag);
     });
 
@@ -165,7 +172,7 @@ const read = async () => {
 const makeReadOnly = async () => {
   const record = createNdefTextRecord();
 
-  Nfc.addListener('nfcTagScanned', async event => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
     await Nfc.makeReadOnly();
   });
 
