@@ -64,6 +64,14 @@ This plugin is still **under development**. We have already received many featur
 1. **What do I do when I have found a bug?**  
    Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will take a look at it as soon as possible.
 
+## Demo
+
+A working example can be found here: [capawesome-team/capacitor-nfc-demo](https://github.com/capawesome-team/capacitor-nfc-demo)
+
+| Android | iOS |
+| ---------- | ---------- |
+| <img src="https://user-images.githubusercontent.com/13857929/184409092-7fdc3a77-67b1-4155-b1b1-0fd34a92a77b.gif" height="576" /> | <img src="https://user-images.githubusercontent.com/13857929/184409000-a81243a3-93e5-4d51-817a-e006c0a385cf.gif" height="576" /> |
+
 ## Installation
 
 As long as the project is available as [Sponsorware](#sponsorware), the project will be distributed via GitHub packages.
@@ -133,10 +141,6 @@ The NFC tag requires a [URI record](https://w3c.github.io/web-nfc/#uri-record) (
 ## Configuration
 
 No configuration required for this plugin.
-
-## Demo
-
-A working example can be found here: [capawesome-team/capacitor-nfc-demo](https://github.com/capawesome-team/capacitor-nfc-demo)
 
 ## Usage
 
