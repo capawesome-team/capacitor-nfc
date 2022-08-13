@@ -40,6 +40,14 @@ However, we kindly ask you to respect our **fair use policy**:
 - Please **don't distribute the source code** of the sponsors-only repository. You may freely use it for public, private or commercial projects, privately fork or mirror it, but please don't make the source code public, as it would counteract the sponsorware strategy.
 - If you cancel your subscription, you're automatically removed as a collaborator and will miss out on all future updates. However, **you may use the latest version that's available to you as long as you like**.
 
+## Demo
+
+A working example can be found here: [capawesome-team/capacitor-nfc-demo](https://github.com/capawesome-team/capacitor-nfc-demo)
+
+| Android | iOS |
+| ---------- | ---------- |
+| <img src="https://user-images.githubusercontent.com/13857929/184409092-7fdc3a77-67b1-4155-b1b1-0fd34a92a77b.gif" width="324" /> | <img src="https://user-images.githubusercontent.com/13857929/184409000-a81243a3-93e5-4d51-817a-e006c0a385cf.gif" width="266" /> |
+
 ## Roadmap
 
 This plugin is still **under development**. We have already received many feature requests. This is our approximate roadmap:
@@ -56,21 +64,13 @@ This plugin is still **under development**. We have already received many featur
 1. **Which platforms are supported?**  
    This plugin supports Android 5+, iOS 13+ and Web (see [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_NFC_API#browser_compatibility)). But not all platforms and devices support all technologies. You can read more about this in the plugin documentation.
 1. **Which Capacitor versions are supported?**  
-   This plugin supports only one major Capacitor version at a time. We start with Capacitor 3 and will update to Capacitor 4 soon.
+   This plugin supports only one major Capacitor version at a time. We start with Capacitor 3 and will update to Capacitor 4 soon. The Capacitor 4 version is already available under the `next` tag.
 1. **Can I read and write this specific tag with my device?**  
    This always depends on your device and the specific tag. The easiest way to find out is to download our demo app and give it a try.
 1. **What do I do when I have a feature request?**  
    Please submit your feature request [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will then review it and possibly put it on our roadmap.
 1. **What do I do when I have found a bug?**  
    Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will take a look at it as soon as possible.
-
-## Demo
-
-A working example can be found here: [capawesome-team/capacitor-nfc-demo](https://github.com/capawesome-team/capacitor-nfc-demo)
-
-| Android | iOS |
-| ---------- | ---------- |
-| <img src="https://user-images.githubusercontent.com/13857929/184409092-7fdc3a77-67b1-4155-b1b1-0fd34a92a77b.gif" height="576" /> | <img src="https://user-images.githubusercontent.com/13857929/184409000-a81243a3-93e5-4d51-817a-e006c0a385cf.gif" height="576" /> |
 
 ## Installation
 
@@ -225,9 +225,9 @@ const removeAllListeners = async () => {
 * [`openSettings()`](#opensettings)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('nfcTagScanned', ...)`](#addlistenernfctagscanned)
-* [`addListener('scanSessionCanceled', ...)`](#addlistenerscansessioncanceled)
-* [`addListener('scanSessionError', ...)`](#addlistenerscansessionerror)
+* [`addListener('nfcTagScanned', ...)`](#addlistenernfctagscanned-)
+* [`addListener('scanSessionCanceled', ...)`](#addlistenerscansessioncanceled-)
+* [`addListener('scanSessionError', ...)`](#addlistenerscansessionerror-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
