@@ -21,6 +21,21 @@
 | ---------- | ----------------------------------------- | --------------------------------------------- |
 | Robin Genz | [robingenz](https://github.com/robingenz) | [@robin_genz](https://twitter.com/robin_genz) |
 
+## Sponsors
+
+This is an MIT-licensed open source project.
+It can grow thanks to the support by these awesome people.
+If you'd like to join them, please read more [here](https://github.com/sponsors/capawesome-team).
+
+### Base Sponsor
+
+<a href="https://nfc21.de/?_locale=en&utm_source=github&utm_medium=referral&utm_campaign=capawesome">
+<p align="center"><br><img src="https://user-images.githubusercontent.com/13857929/184146236-f1e6140c-2e31-434c-8859-c782ac8c283c.png" width="125" height="84" /></p>
+<h4 align="center">NFC21 - NFC Tag Shop and Service Provider</h4>
+</a>
+
+<!-- sponsors --><!-- sponsors -->
+
 ## Sponsorware
 
 This project is available as **Sponsorware**.
@@ -44,8 +59,8 @@ However, we kindly ask you to respect our **fair use policy**:
 
 A working example can be found here: [capawesome-team/capacitor-nfc-demo](https://github.com/capawesome-team/capacitor-nfc-demo)
 
-| Android | iOS |
-| ---------- | ---------- |
+| Android                                                                                                                         | iOS                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://user-images.githubusercontent.com/13857929/184409092-7fdc3a77-67b1-4155-b1b1-0fd34a92a77b.gif" width="324" /> | <img src="https://user-images.githubusercontent.com/13857929/184409000-a81243a3-93e5-4d51-817a-e006c0a385cf.gif" width="266" /> |
 
 ## Roadmap
