@@ -67,10 +67,10 @@ A working example can be found here: [capawesome-team/capacitor-nfc-demo](https:
 
 This plugin is still **under development**. We have already received many feature requests. This is our approximate roadmap:
 
-| Q3 2022                     | Q4 2022               |
-| --------------------------- | --------------------- |
-| - Capacitor 4 compatibility | - Android Reader Mode |
-| - Raw commands support      |                       |
+| Q3 2022                     | Q4 2022                |
+| --------------------------- | ---------------------- |
+| - Capacitor 4 compatibility | - Android Reader Mode  |
+|                             | - Raw commands support |
 
 ⚠️ **Disclaimer**: This roadmap does not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and is intended to outline the general development plans. You should not rely on this roadmap to make any sponsorship decision.
 
