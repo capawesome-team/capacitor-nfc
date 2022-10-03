@@ -487,11 +487,12 @@ Remove all listeners for this plugin.
 
 #### StartScanSessionOptions
 
-| Prop               | Type                          | Description                                                                                  | Since |
-| ------------------ | ----------------------------- | -------------------------------------------------------------------------------------------- | ----- |
-| **`alertMessage`** | <code>string</code>           | A custom message, which is displayed in the NFC Reader Session alert. Only available on iOS. | 0.0.1 |
-| **`techTypes`**    | <code>NfcTagTechType[]</code> | The NFC tag technologies to filter on in this session. Only available on Android.            | 0.0.1 |
-| **`mimeTypes`**    | <code>string[]</code>         | Mime types to filter on in this session. Only available on Android.                          | 0.0.1 |
+| Prop                 | Type                          | Description                                                                                  | Default                                                       | Since |
+| -------------------- | ----------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----- |
+| **`alertMessage`**   | <code>string</code>           | A custom message, which is displayed in the NFC Reader Session alert. Only available on iOS. |                                                               | 0.0.1 |
+| **`techTypes`**      | <code>NfcTagTechType[]</code> | The NFC tag technologies to filter on in this session. Only available on Android.            |                                                               | 0.0.1 |
+| **`mimeTypes`**      | <code>string[]</code>         | Mime types to filter on in this session. Only available on Android.                          |                                                               | 0.0.1 |
+| **`pollingOptions`** | <code>PollingOption[]</code>  | Type of tags to detect during a polling sequence. Only available on iOS.                     | <code>[PollingOption.iso14443, PollingOption.iso15693]</code> | 0.2.0 |
 
 
 #### StopScanSessionOptions
@@ -616,6 +617,15 @@ Remove all listeners for this plugin.
 | **`MifareUltralight`** | <code>'MIFARE_ULTRALIGHT'</code> | 0.0.1 |
 | **`NfcBarcode`**       | <code>'NFC_BARCODE'</code>       | 0.0.1 |
 | **`NdefFormatable`**   | <code>'NDEF_FORMATABLE'</code>   | 0.0.1 |
+
+
+#### PollingOption
+
+| Members        | Value                   | Description                                                   | Since |
+| -------------- | ----------------------- | ------------------------------------------------------------- | ----- |
+| **`iso14443`** | <code>'iso14443'</code> | The option for detecting ISO 7816-compatible and MIFARE tags. | 0.2.0 |
+| **`iso15693`** | <code>'iso15693'</code> | The option for detecting ISO 15693 tags.                      | 0.2.0 |
+| **`iso18092`** | <code>'iso18092'</code> | The option for detecting FeliCa tags.                         | 0.2.0 |
 
 
 #### TypeNameFormat
