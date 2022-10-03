@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/capawesome-team/sponsorware/compare/v0.1.1...v0.2.0) (2022-10-03)
+
+### ⚠ BREAKING CHANGES
+
+* FeliCa tags are no longer detected by default on iOS. The polling option must be configured using `pollingOptions`. (#3)
+
+### Features
+
+* **ios:** add `pollingOptions` option ([#3](https://github.com/capawesome-team/sponsorware/issues/3)) ([8d809e8](https://github.com/capawesome-team/sponsorware/commit/8d809e838f679b2a7ce873854218f05de951f49a))
+
 ### [0.1.1](https://github.com/capawesome-team/sponsorware/compare/v0.1.0...v0.1.1) (2022-09-07)
 
 
