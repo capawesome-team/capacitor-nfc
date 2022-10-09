@@ -70,7 +70,7 @@ This plugin is still **under development**. We have already received many featur
 | Q3 2022                     | Q4 2022                |
 | --------------------------- | ---------------------- |
 | - Capacitor 4 compatibility | - Android Reader Mode  |
-|                             | - Raw commands support |
+|                             | - [Raw commands support](https://github.com/capawesome-team/capacitor-nfc/issues/6) |
 
 ⚠️ **Disclaimer**: This roadmap does not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and is intended to outline the general development plans. You should not rely on this roadmap to make any sponsorship decision.
 
