@@ -65,12 +65,11 @@ A working example can be found here: [capawesome-team/capacitor-nfc-demo](https:
 
 ## Roadmap
 
-This plugin is still **under development**. We have already received many feature requests. This is our approximate roadmap:
+This plugin is still **under development**. This is our approximate roadmap:
 
-| Q3 2022                     | Q4 2022                |
-| --------------------------- | ---------------------- |
-| - Capacitor 4 compatibility | - Android Reader Mode  |
-|                             | - [Raw commands support](https://github.com/capawesome-team/capacitor-nfc/issues/6) |
+| Q4 2022                |
+| ---------------------- |
+| - Android Reader Mode  |
 
 ⚠️ **Disclaimer**: This roadmap does not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and is intended to outline the general development plans. You should not rely on this roadmap to make any sponsorship decision.
 
@@ -244,6 +243,8 @@ const readSignature = async () => {
 * [`stopScanSession(...)`](#stopscansession)
 * [`write(...)`](#write)
 * [`makeReadOnly()`](#makereadonly)
+* [`erase()`](#erase)
+* [`format()`](#format)
 * [`transceive(...)`](#transceive)
 * [`isSupported()`](#issupported)
 * [`isEnabled()`](#isenabled)
@@ -269,7 +270,7 @@ const readSignature = async () => {
 startScanSession(options?: StartScanSessionOptions | undefined) => Promise<void>
 ```
 
-Starts a scan session.
+Start a scan session.
 Only one session can be active at a time.
 
 On iOS, this will trigger the NFC Reader Session alert.
@@ -289,7 +290,7 @@ On iOS, this will trigger the NFC Reader Session alert.
 stopScanSession(options?: StopScanSessionOptions | undefined) => Promise<void>
 ```
 
-Stops the active scan session.
+Stop the active scan session.
 
 | Param         | Type                                                                      |
 | ------------- | ------------------------------------------------------------------------- |
@@ -306,7 +307,7 @@ Stops the active scan session.
 write(options: WriteOptions) => Promise<void>
 ```
 
-Writes to a NFC tag.
+Write to a NFC tag.
 
 This method must be called from within a `nfcTagScanned` handler.
 
@@ -325,13 +326,45 @@ This method must be called from within a `nfcTagScanned` handler.
 makeReadOnly() => Promise<void>
 ```
 
-Makes a NFC tag readonly.
+Make a NFC tag readonly.
 
 This method must be called from within a `nfcTagScanned` handler.
 
 **Attention:** This is permanent and can not be undone.
 
 **Since:** 0.0.1
+
+--------------------
+
+
+### erase()
+
+```typescript
+erase() => Promise<void>
+```
+
+Erase the NFC tag by writing an empty NDEF message.
+
+This method must be called from within a `nfcTagScanned` handler.
+
+**Since:** 0.3.0
+
+--------------------
+
+
+### format()
+
+```typescript
+format() => Promise<void>
+```
+
+Format the NFC tag as NDEF and write an empty NDEF message.
+
+This method must be called from within a `nfcTagScanned` handler.
+
+Only available on Android.
+
+**Since:** 0.3.0
 
 --------------------
 
