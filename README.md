@@ -160,7 +160,7 @@ No configuration required for this plugin.
 ## Usage
 
 ```typescript
-import { Nfc, NfcUtils } from '@capawesome-team/capacitor-nfc';
+import { Nfc, NfcUtils, NfcTagTechType } from '@capawesome-team/capacitor-nfc';
 
 const createNdefTextRecord = async () => {
   const utils = new NfcUtils();
@@ -225,6 +225,15 @@ const requestPermissions = async () => {
 const removeAllListeners = async () => {
   await Nfc.removeAllListeners();
 };
+
+const readSignature = async () => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
+    const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
+    return response;
+  });
+
+  await Nfc.startScanSession();
+};
 ```
 
 ## API
@@ -235,6 +244,7 @@ const removeAllListeners = async () => {
 * [`stopScanSession(...)`](#stopscansession)
 * [`write(...)`](#write)
 * [`makeReadOnly()`](#makereadonly)
+* [`transceive(...)`](#transceive)
 * [`isSupported()`](#issupported)
 * [`isEnabled()`](#isenabled)
 * [`openSettings()`](#opensettings)
@@ -297,6 +307,7 @@ write(options: WriteOptions) => Promise<void>
 ```
 
 Writes to a NFC tag.
+
 This method must be called from within a `nfcTagScanned` handler.
 
 | Param         | Type                                                  |
@@ -315,11 +326,44 @@ makeReadOnly() => Promise<void>
 ```
 
 Makes a NFC tag readonly.
+
 This method must be called from within a `nfcTagScanned` handler.
 
 **Attention:** This is permanent and can not be undone.
 
 **Since:** 0.0.1
+
+--------------------
+
+
+### transceive(...)
+
+```typescript
+transceive(options: TransceiveOptions) => Promise<TransceiveResult>
+```
+
+Send raw command to the tag and receive the response.
+
+This method must be called from within a `nfcTagScanned` handler.
+
+⚠️ **Experimental:** This method could not be tested extensively yet. Please let us know if you discover any issues!
+
+⚠️ **Attention**: A bad command can damage the tag forever. Please read the Android and iOS documentation linked below first.
+
+More information on how to use this method on Android: https://developer.android.com/reference/android/nfc/tech/package-summary
+More information on how to use this method on iOS with...
+- ISO 15693-3: https://developer.apple.com/documentation/corenfc/nfciso15693tag/3043799-customcommand
+- FeliCa: https://developer.apple.com/documentation/corenfc/nfcfelicatag/3043786-sendfelicacommand
+
+Only available on Android and iOS.
+
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#transceiveoptions">TransceiveOptions</a></code> |
+
+**Returns:** <code>Promise&lt;<a href="#transceiveresult">TransceiveResult</a>&gt;</code>
+
+**Since:** 0.3.0
 
 --------------------
 
@@ -526,6 +570,23 @@ Remove all listeners for this plugin.
 | **`type`**    | <code>number[]</code>                                     | The type of the record payload. This should be used in conjunction with the `tnf` field to determine the payload format. | 0.0.1 |
 
 
+#### TransceiveResult
+
+| Prop           | Type                  | Description                 | Since |
+| -------------- | --------------------- | --------------------------- | ----- |
+| **`response`** | <code>number[]</code> | Bytes received in response. | 0.3.0 |
+
+
+#### TransceiveOptions
+
+| Prop                       | Type                                                      | Description                                                                                                                                                                     | Since |
+| -------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`techType`**             | <code><a href="#nfctagtechtype">NfcTagTechType</a></code> | The NFC tag technology to connect with. On iOS, only <a href="#nfctagtechtype">`NfcTagTechType.NfcF`</a> and <a href="#nfctagtechtype">`NfcTagTechType.NfcV`</a> are supported. | 0.3.0 |
+| **`data`**                 | <code>number[]</code>                                     | Bytes to send.                                                                                                                                                                  | 0.3.0 |
+| **`iso15693RequestFlags`** | <code>Iso15693RequestFlag[]</code>                        | The request flags for the NFC tag technology type `NfcV` (ISO 15693-3). Only available on iOS 14+                                                                               | 0.3.0 |
+| **`iso15693CommandCode`**  | <code>number</code>                                       | The custom command code defined by the IC manufacturer for the NFC tag technology type `NfcV` (ISO 15693-3). Valid range is 0xA0 to 0xDF inclusively. Only available on iOS 14+ | 0.3.0 |
+
+
 #### IsSupportedResult
 
 | Prop              | Type                 | Since |
@@ -639,6 +700,19 @@ Remove all listeners for this plugin.
 | **`External`**    | <code>4</code> | A user-defined value that is based on the rules of the NFC Forum Record Type Definition specification. | 0.0.1 |
 | **`Unknown`**     | <code>5</code> | Type is unknown.                                                                                       | 0.0.1 |
 | **`Unchanged`**   | <code>6</code> | Indicates the payload is an intermediate or final chunk of a chunked NDEF Record.                      | 0.0.1 |
+
+
+#### Iso15693RequestFlag
+
+| Members                   | Value                              | Since |
+| ------------------------- | ---------------------------------- | ----- |
+| **`address`**             | <code>'address'</code>             | 0.3.0 |
+| **`commandSpecificBit8`** | <code>'commandSpecificBit8'</code> | 0.3.0 |
+| **`dualSubCarriers`**     | <code>'dualSubCarriers'</code>     | 0.3.0 |
+| **`highDataRate`**        | <code>'highDataRate'</code>        | 0.3.0 |
+| **`option`**              | <code>'option'</code>              | 0.3.0 |
+| **`protocolExtension`**   | <code>'protocolExtension'</code>   | 0.3.0 |
+| **`select`**              | <code>'select'</code>              | 0.3.0 |
 
 
 #### NfcTagType
