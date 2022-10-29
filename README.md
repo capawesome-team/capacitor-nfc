@@ -188,10 +188,24 @@ const read = async () => {
 };
 
 const makeReadOnly = async () => {
-  const record = createNdefTextRecord();
-
   Nfc.addListener('nfcTagScanned', async (event) => {
     await Nfc.makeReadOnly();
+  });
+
+  await Nfc.startScanSession();
+};
+
+const erase = async () => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
+    await Nfc.erase();
+  });
+
+  await Nfc.startScanSession();
+};
+
+const format = async () => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
+    await Nfc.format();
   });
 
   await Nfc.startScanSession();
