@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/capawesome-team/sponsorware/compare/v0.2.0...v0.3.0) (2022-11-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **android:** Error messages on Android are now no longer localized.
+
+### Features
+
+* add `erase` and `format` methods ([#6](https://github.com/capawesome-team/sponsorware/issues/6)) ([8c7c8a5](https://github.com/capawesome-team/sponsorware/commit/8c7c8a5c03697f605278c6849b224e6d3a887bd5))
+* **android:** return non-localized error messages ([#7](https://github.com/capawesome-team/sponsorware/issues/7)) ([0d16442](https://github.com/capawesome-team/sponsorware/commit/0d164427026bef5394d21a5409788ea268347891))
+* support NFC raw commands ([#5](https://github.com/capawesome-team/sponsorware/issues/5)) ([a00bfd9](https://github.com/capawesome-team/sponsorware/commit/a00bfd97a165ddc077fe59c9e3040027c12aa562))
+
+
+### Bug Fixes
+
+* **android:** add missing `makeReadOnly` implementation ([#4](https://github.com/capawesome-team/sponsorware/issues/4)) ([326d4a5](https://github.com/capawesome-team/sponsorware/commit/326d4a5505346a6b369e28c4ae07a62d937b6814))
+
 ## [0.2.0](https://github.com/capawesome-team/capacitor-nfc-sponsorware/compare/v0.1.1...v0.2.0) (2022-10-03)
 
 ### ⚠ BREAKING CHANGES
