@@ -29,7 +29,7 @@ If you'd like to join them, please read more [here](https://github.com/sponsors/
 
 ### Base Sponsor
 
-<a href="https://nfc21.de/?_locale=en&utm_source=github&utm_medium=referral&utm_campaign=capawesome">
+<a href="https://nfc21.de/?_locale=en&utm_source=github&utm_medium=referral&utm_campaign=capawesome" target="_blank">
 <p align="center"><br><img src="https://user-images.githubusercontent.com/13857929/184146236-f1e6140c-2e31-434c-8859-c782ac8c283c.png" width="125" height="84" /></p>
 <h4 align="center">NFC21 - NFC Tag Shop and Service Provider</h4>
 </a>
