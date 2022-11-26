@@ -195,6 +195,15 @@ const makeReadOnly = async () => {
   await Nfc.startScanSession();
 };
 
+const readSignature = async () => {
+  Nfc.addListener('nfcTagScanned', async (event) => {
+    const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
+    return response;
+  });
+
+  await Nfc.startScanSession();
+};
+
 const erase = async () => {
   Nfc.addListener('nfcTagScanned', async (event) => {
     await Nfc.erase();
@@ -237,15 +246,6 @@ const requestPermissions = async () => {
 
 const removeAllListeners = async () => {
   await Nfc.removeAllListeners();
-};
-
-const readSignature = async () => {
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
-    return response;
-  });
-
-  await Nfc.startScanSession();
 };
 ```
 
@@ -397,8 +397,9 @@ This method must be called from within a `nfcTagScanned` handler.
 
 ⚠️ **Attention**: A bad command can damage the tag forever. Please read the Android and iOS documentation linked below first.
 
-More information on how to use this method on Android: https://developer.android.com/reference/android/nfc/tech/package-summary
-More information on how to use this method on iOS with...
+More information on how to use this method on **Android**: https://developer.android.com/reference/android/nfc/tech/package-summary  
+
+More information on how to use this method on **iOS** with...
 - ISO 15693-3: https://developer.apple.com/documentation/corenfc/nfciso15693tag/3043799-customcommand
 - FeliCa: https://developer.apple.com/documentation/corenfc/nfcfelicatag/3043786-sendfelicacommand
 
