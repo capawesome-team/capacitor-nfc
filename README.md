@@ -397,7 +397,7 @@ This method must be called from within a `nfcTagScanned` handler.
 
 ⚠️ **Attention**: A bad command can damage the tag forever. Please read the Android and iOS documentation linked below first.
 
-More information on how to use this method on **Android**: https://developer.android.com/reference/android/nfc/tech/package-summary  
+More information on how to use this method on **Android**: https://developer.android.com/reference/android/nfc/tech/package-summary
 
 More information on how to use this method on **iOS** with...
 - ISO 15693-3: https://developer.apple.com/documentation/corenfc/nfciso15693tag/3043799-customcommand
