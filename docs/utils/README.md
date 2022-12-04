@@ -4,8 +4,10 @@
 
 <docgen-index>
 
-* [`convertStringToBytes(...)`](#convertstringtobytes)
+* [`convertBytesToHex(...)`](#convertbytestohex)
 * [`convertBytesToString(...)`](#convertbytestostring)
+* [`convertHexToBytes(...)`](#converthextobytes)
+* [`convertStringToBytes(...)`](#convertstringtobytes)
 * [`createNdefRecord(...)`](#createndefrecord)
 * [`createNdefEmptyRecord()`](#createndefemptyrecord)
 * [`createNdefTextRecord(...)`](#createndeftextrecord)
@@ -24,19 +26,21 @@
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### convertStringToBytes(...)
+### convertBytesToHex(...)
 
 ```typescript
-convertStringToBytes(options: ConvertStringToBytesOptions) => { bytes: number[]; }
+convertBytesToHex(options: ConvertBytesToHexOptions) => { hex: string; }
 ```
 
-| Param         | Type                                                                                |
-| ------------- | ----------------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#convertstringtobytesoptions">ConvertStringToBytesOptions</a></code> |
+Convert a byte array to a string.
 
-**Returns:** <code>{ bytes: number[]; }</code>
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#convertbytestohexoptions">ConvertBytesToHexOptions</a></code> |
 
-**Since:** 0.0.1
+**Returns:** <code>{ hex: string; }</code>
+
+**Since:** 0.3.1
 
 --------------------
 
@@ -46,6 +50,8 @@ convertStringToBytes(options: ConvertStringToBytesOptions) => { bytes: number[];
 ```typescript
 convertBytesToString(options: ConvertBytesToStringOptions) => { text: string; }
 ```
+
+Convert a byte array to a string.
 
 | Param         | Type                                                                                |
 | ------------- | ----------------------------------------------------------------------------------- |
@@ -58,11 +64,51 @@ convertBytesToString(options: ConvertBytesToStringOptions) => { text: string; }
 --------------------
 
 
+### convertHexToBytes(...)
+
+```typescript
+convertHexToBytes(options: ConvertHexToBytesOptions) => { bytes: number[]; }
+```
+
+Convert a byte array to a string.
+
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#converthextobytesoptions">ConvertHexToBytesOptions</a></code> |
+
+**Returns:** <code>{ bytes: number[]; }</code>
+
+**Since:** 0.3.1
+
+--------------------
+
+
+### convertStringToBytes(...)
+
+```typescript
+convertStringToBytes(options: ConvertStringToBytesOptions) => { bytes: number[]; }
+```
+
+Convert a string to a byte array.
+
+| Param         | Type                                                                                |
+| ------------- | ----------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#convertstringtobytesoptions">ConvertStringToBytesOptions</a></code> |
+
+**Returns:** <code>{ bytes: number[]; }</code>
+
+**Since:** 0.0.1
+
+--------------------
+
+
 ### createNdefRecord(...)
 
 ```typescript
 createNdefRecord(options: CreateNdefRecordOptions) => CreateNdefRecordResult
 ```
+
+Create a NDEF record.
 
 | Param         | Type                                                                        |
 | ------------- | --------------------------------------------------------------------------- |
@@ -81,6 +127,8 @@ createNdefRecord(options: CreateNdefRecordOptions) => CreateNdefRecordResult
 createNdefEmptyRecord() => CreateNdefRecordResult
 ```
 
+Create an empty NDEF record.
+
 **Returns:** <code><a href="#createndefrecordresult">CreateNdefRecordResult</a></code>
 
 **Since:** 0.0.1
@@ -93,6 +141,8 @@ createNdefEmptyRecord() => CreateNdefRecordResult
 ```typescript
 createNdefTextRecord(options: CreateNdefTextRecordOptions) => CreateNdefRecordResult
 ```
+
+Create a NDEF text record.
 
 | Param         | Type                                                                                |
 | ------------- | ----------------------------------------------------------------------------------- |
@@ -111,6 +161,8 @@ createNdefTextRecord(options: CreateNdefTextRecordOptions) => CreateNdefRecordRe
 createNdefUriRecord(options: CreateNdefUriRecordOptions) => CreateNdefRecordResult
 ```
 
+Create a NDEF URI record.
+
 | Param         | Type                                                                              |
 | ------------- | --------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#createndefurirecordoptions">CreateNdefUriRecordOptions</a></code> |
@@ -127,6 +179,8 @@ createNdefUriRecord(options: CreateNdefUriRecordOptions) => CreateNdefRecordResu
 ```typescript
 createNdefAbsoluteUriRecord(options: CreateNdefAbsoluteUriRecordOptions) => CreateNdefRecordResult
 ```
+
+Create a NDEF absolute URI record.
 
 | Param         | Type                                                                                              |
 | ------------- | ------------------------------------------------------------------------------------------------- |
@@ -145,6 +199,8 @@ createNdefAbsoluteUriRecord(options: CreateNdefAbsoluteUriRecordOptions) => Crea
 createNdefMimeMediaRecord(options: CreateNdefMimeMediaRecordOptions) => CreateNdefRecordResult
 ```
 
+Create a NDEF mime media record.
+
 | Param         | Type                                                                                          |
 | ------------- | --------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#createndefmimemediarecordoptions">CreateNdefMimeMediaRecordOptions</a></code> |
@@ -161,6 +217,8 @@ createNdefMimeMediaRecord(options: CreateNdefMimeMediaRecordOptions) => CreateNd
 ```typescript
 createNdefExternalRecord(options: CreateNdefExternalRecordOptions) => CreateNdefRecordResult
 ```
+
+Create a NDEF external type record.
 
 | Param         | Type                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------- |
@@ -179,6 +237,8 @@ createNdefExternalRecord(options: CreateNdefExternalRecordOptions) => CreateNdef
 getTextFromNdefTextRecord(options: GetTextFromNdefTextRecordOptions) => { text: string | undefined; }
 ```
 
+Get the text from a NDEF text record.
+
 | Param         | Type                                                                                          |
 | ------------- | --------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#gettextfromndeftextrecordoptions">GetTextFromNdefTextRecordOptions</a></code> |
@@ -195,6 +255,8 @@ getTextFromNdefTextRecord(options: GetTextFromNdefTextRecordOptions) => { text: 
 ```typescript
 getLanguageFromNdefTextRecord(options: GetLanguageFromNdefTextRecordOptions) => { language: string | undefined; }
 ```
+
+Get the language code from a NDEF text record.
 
 | Param         | Type                                                                                                  |
 | ------------- | ----------------------------------------------------------------------------------------------------- |
@@ -213,6 +275,8 @@ getLanguageFromNdefTextRecord(options: GetLanguageFromNdefTextRecordOptions) => 
 mapBytesToRecordTypeDefinition(options: { bytes: number[]; }) => { type: RecordTypeDefinition | undefined; }
 ```
 
+Map a byte array to a the corresponding NDEF record type.
+
 | Param         | Type                              |
 | ------------- | --------------------------------- |
 | **`options`** | <code>{ bytes: number[]; }</code> |
@@ -227,18 +291,36 @@ mapBytesToRecordTypeDefinition(options: { bytes: number[]; }) => { type: RecordT
 ### Interfaces
 
 
-#### ConvertStringToBytesOptions
+#### ConvertBytesToHexOptions
 
-| Prop       | Type                | Since |
-| ---------- | ------------------- | ----- |
-| **`text`** | <code>string</code> | 0.0.1 |
+| Prop            | Type                  | Description                                | Default           | Since |
+| --------------- | --------------------- | ------------------------------------------ | ----------------- | ----- |
+| **`bytes`**     | <code>number[]</code> | The byte array to convert to a hex string. |                   | 0.3.1 |
+| **`start`**     | <code>string</code>   | The text to prepend to the hex string.     | <code>'0x'</code> | 0.3.1 |
+| **`separator`** | <code>string</code>   | The separator to use between each byte.    | <code>''</code>   | 0.3.1 |
 
 
 #### ConvertBytesToStringOptions
 
-| Prop        | Type                  | Since |
-| ----------- | --------------------- | ----- |
-| **`bytes`** | <code>number[]</code> | 0.0.1 |
+| Prop        | Type                  | Description                            | Since |
+| ----------- | --------------------- | -------------------------------------- | ----- |
+| **`bytes`** | <code>number[]</code> | The byte array to convert to a string. | 0.0.1 |
+
+
+#### ConvertHexToBytesOptions
+
+| Prop            | Type                | Description                                              | Default           | Since |
+| --------------- | ------------------- | -------------------------------------------------------- | ----------------- | ----- |
+| **`hex`**       | <code>string</code> | The hex string to convert to a byte array.               |                   | 0.3.1 |
+| **`start`**     | <code>string</code> | The text to remove from the beginning of the hex string. | <code>'0x'</code> | 0.3.1 |
+| **`separator`** | <code>string</code> | The separator which is used between each byte.           | <code>''</code>   | 0.3.1 |
+
+
+#### ConvertStringToBytesOptions
+
+| Prop       | Type                | Description                            | Since |
+| ---------- | ------------------- | -------------------------------------- | ----- |
+| **`text`** | <code>string</code> | The string to convert to a byte array. | 0.0.1 |
 
 
 #### CreateNdefRecordResult
