@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
+  <img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" />
   <!-- <a href="https://github.com/capawesome-team/capacitor-nfc/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capawesome-team/capacitor-nfc/CI/main?style=flat-square" /></a> -->
   <a href="https://github.com/capawesome-team/capacitor-nfc"><img src="https://img.shields.io/github/license/capawesome-team/capacitor-nfc?style=flat-square" /></a>
 <!-- <br> -->
