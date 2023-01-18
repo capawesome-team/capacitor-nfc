@@ -196,12 +196,14 @@ const makeReadOnly = async () => {
 };
 
 const readSignature = async () => {
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
-    return response;
-  });
+  return new Promise((resolve) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
+      resolve(response);
+    });
 
-  await Nfc.startScanSession();
+    Nfc.startScanSession();
+  });
 };
 
 const erase = async () => {
