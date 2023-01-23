@@ -118,7 +118,8 @@ As long as the project is available as [Sponsorware](#sponsorware), the project 
    npx cap sync
    ```
 
-   🆘 If you have any problems please [contact us by mail](mailto:support@capawesome.io) or [create a GitHub discussion](https://docs.github.com/en/discussions/quickstart#creating-a-new-discussion) in this repository.  
+   🆘 If you get `npm ERR! code E403` as an error during installation, then check if you are already an [Insider Sponsor](https://github.com/sponsors/capawesome-team) of Capawesome on GitHub.
+   If the error remains or you have any other problems please [contact us by mail](mailto:support@capawesome.io) or [create a GitHub discussion](https://docs.github.com/en/discussions/quickstart#creating-a-new-discussion) in this repository.  
    ⚠️ **Attention**: Be careful not to disclose your npm auth token! If you have any questions (CI configuration etc.) please let us know.
 
 ### Android
