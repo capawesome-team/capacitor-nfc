@@ -169,18 +169,21 @@ const createNdefTextRecord = async () => {
 };
 
 const write = async () => {
-  const record = createNdefTextRecord();
+  return new Promise((resolve) => {
+    const record = createNdefTextRecord();
 
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    await Nfc.write({ message: { records: [record] } });
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      await Nfc.write({ message: { records: [record] } });
+      resolve();
+    });
+
+    Nfc.startScanSession();
   });
-
-  await Nfc.startScanSession();
 };
 
 const read = async () => {
   return new Promise((resolve) => {
-    Nfc.addListener('nfcTagScanned', async (event) => {
+    Nfc.addListener('nfcTagScanned', (event) => {
       resolve(event.nfcTag);
     });
 
@@ -189,11 +192,14 @@ const read = async () => {
 };
 
 const makeReadOnly = async () => {
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    await Nfc.makeReadOnly();
-  });
+  return new Promise((resolve) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      await Nfc.makeReadOnly();
+      resolve();
+    });
 
-  await Nfc.startScanSession();
+    Nfc.startScanSession();
+  });
 };
 
 const readSignature = async () => {
@@ -208,19 +214,25 @@ const readSignature = async () => {
 };
 
 const erase = async () => {
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    await Nfc.erase();
-  });
+  return new Promise((resolve) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      await Nfc.erase();
+      resolve();
+    });
 
-  await Nfc.startScanSession();
+    Nfc.startScanSession();
+  });
 };
 
 const format = async () => {
-  Nfc.addListener('nfcTagScanned', async (event) => {
-    await Nfc.format();
-  });
+  return new Promise((resolve) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      await Nfc.format();
+      resolve();
+    });
 
-  await Nfc.startScanSession();
+    Nfc.startScanSession();
+  });
 };
 
 const isSupported = async () => {
