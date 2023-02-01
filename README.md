@@ -93,7 +93,7 @@ As long as the project is available as [Sponsorware](#sponsorware), the project 
 1. Log in to GitHub package registry ([GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)):
 
    ```
-   $ npm login --scope=@capawesome-team --registry=https://npm.pkg.github.com
+   $ npm login --scope=@capawesome-team --auth-type=legacy --registry=https://npm.pkg.github.com
 
    > Username: USERNAME
    > Password: TOKEN
