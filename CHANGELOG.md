@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/capawesome-team/sponsorware/compare/v0.3.0...v0.3.1) (2023-02-06)
+
+
+### Features
+
+* **utils:** add methods `convertBytesToHex` and `convertHexToBytes` ([#9](https://github.com/capawesome-team/sponsorware/issues/9)) ([1969c8b](https://github.com/capawesome-team/sponsorware/commit/1969c8bf8eaf252369b6e9a1e286ba15d907f850))
+
+
+### Bug Fixes
+
+* **ios:** restart polling after reading a tag ([#8](https://github.com/capawesome-team/sponsorware/issues/8)) ([50ff554](https://github.com/capawesome-team/sponsorware/commit/50ff554097c109f95e44b6742c84dd1164f817c3))
+* **utils:** add missing `UriIdentifierCode` option ([#10](https://github.com/capawesome-team/sponsorware/issues/10)) ([b82600e](https://github.com/capawesome-team/sponsorware/commit/b82600e46ef6eaff9cf2b87668f4462e3db407ca))
+
 ## [0.3.0](https://github.com/capawesome-team/sponsorware/compare/v0.2.0...v0.3.0) (2022-11-11)
 
 
