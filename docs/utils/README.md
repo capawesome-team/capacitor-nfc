@@ -7,6 +7,8 @@
 * [`convertBytesToHex(...)`](#convertbytestohex)
 * [`convertBytesToString(...)`](#convertbytestostring)
 * [`convertHexToBytes(...)`](#converthextobytes)
+* [`convertHexToNumber(...)`](#converthextonumber)
+* [`convertNumberToHex(...)`](#convertnumbertohex)
 * [`convertStringToBytes(...)`](#convertstringtobytes)
 * [`createNdefRecord(...)`](#createndefrecord)
 * [`createNdefEmptyRecord()`](#createndefemptyrecord)
@@ -15,8 +17,10 @@
 * [`createNdefAbsoluteUriRecord(...)`](#createndefabsoluteurirecord)
 * [`createNdefMimeMediaRecord(...)`](#createndefmimemediarecord)
 * [`createNdefExternalRecord(...)`](#createndefexternalrecord)
-* [`getTextFromNdefTextRecord(...)`](#gettextfromndeftextrecord)
+* [`getIdentifierCodeFromNdefUriRecord(...)`](#getidentifiercodefromndefurirecord)
 * [`getLanguageFromNdefTextRecord(...)`](#getlanguagefromndeftextrecord)
+* [`getTextFromNdefTextRecord(...)`](#gettextfromndeftextrecord)
+* [`getUriFromNdefUriRecord(...)`](#geturifromndefurirecord)
 * [`mapBytesToRecordTypeDefinition(...)`](#mapbytestorecordtypedefinition)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
@@ -32,7 +36,7 @@
 convertBytesToHex(options: ConvertBytesToHexOptions) => { hex: string; }
 ```
 
-Convert a byte array to a string.
+Convert a byte array to a hex string.
 
 | Param         | Type                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
@@ -70,13 +74,51 @@ Convert a byte array to a string.
 convertHexToBytes(options: ConvertHexToBytesOptions) => { bytes: number[]; }
 ```
 
-Convert a byte array to a string.
+Convert a hex string to a byte array.
 
 | Param         | Type                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#converthextobytesoptions">ConvertHexToBytesOptions</a></code> |
 
 **Returns:** <code>{ bytes: number[]; }</code>
+
+**Since:** 0.3.1
+
+--------------------
+
+
+### convertHexToNumber(...)
+
+```typescript
+convertHexToNumber(options: ConvertHexToNumberOptions) => { number: number; }
+```
+
+Convert a hex string to a number.
+
+| Param         | Type                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#converthextonumberoptions">ConvertHexToNumberOptions</a></code> |
+
+**Returns:** <code>{ number: number; }</code>
+
+**Since:** 0.3.1
+
+--------------------
+
+
+### convertNumberToHex(...)
+
+```typescript
+convertNumberToHex(options: ConvertNumberToHexOptions) => { hex: string; }
+```
+
+Convert a number to a hex string.
+
+| Param         | Type                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#convertnumbertohexoptions">ConvertNumberToHexOptions</a></code> |
+
+**Returns:** <code>{ hex: string; }</code>
 
 **Since:** 0.3.1
 
@@ -231,21 +273,23 @@ Create a NDEF external type record.
 --------------------
 
 
-### getTextFromNdefTextRecord(...)
+### getIdentifierCodeFromNdefUriRecord(...)
 
 ```typescript
-getTextFromNdefTextRecord(options: GetTextFromNdefTextRecordOptions) => { text: string | undefined; }
+getIdentifierCodeFromNdefUriRecord(options: GetIdentifierCodeFromNdefUriRecordOptions) => { identifierCode: UriIdentifierCode | undefined; }
 ```
 
-Get the text from a NDEF text record.
+Get the identifier code from a NDEF URI record.
 
-| Param         | Type                                                                                          |
-| ------------- | --------------------------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#gettextfromndeftextrecordoptions">GetTextFromNdefTextRecordOptions</a></code> |
+This method assumes that the record has a valid URI identifier code.
 
-**Returns:** <code>{ text: string; }</code>
+| Param         | Type                                                                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#getidentifiercodefromndefurirecordoptions">GetIdentifierCodeFromNdefUriRecordOptions</a></code> |
 
-**Since:** 0.0.1
+**Returns:** <code>{ identifierCode: <a href="#uriidentifiercode">UriIdentifierCode</a>; }</code>
+
+**Since:** 0.3.1
 
 --------------------
 
@@ -265,6 +309,46 @@ Get the language code from a NDEF text record.
 **Returns:** <code>{ language: string; }</code>
 
 **Since:** 0.0.1
+
+--------------------
+
+
+### getTextFromNdefTextRecord(...)
+
+```typescript
+getTextFromNdefTextRecord(options: GetTextFromNdefTextRecordOptions) => { text: string | undefined; }
+```
+
+Get the text from a NDEF text record.
+
+| Param         | Type                                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#gettextfromndeftextrecordoptions">GetTextFromNdefTextRecordOptions</a></code> |
+
+**Returns:** <code>{ text: string; }</code>
+
+**Since:** 0.0.1
+
+--------------------
+
+
+### getUriFromNdefUriRecord(...)
+
+```typescript
+getUriFromNdefUriRecord(options: GetIdentifierCodeFromNdefUriRecordOptions) => { uri: string | undefined; }
+```
+
+Get the uri from a NDEF URI record.
+
+This method assumes that the record has a valid URI identifier code.
+
+| Param         | Type                                                                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#getidentifiercodefromndefurirecordoptions">GetIdentifierCodeFromNdefUriRecordOptions</a></code> |
+
+**Returns:** <code>{ uri: string; }</code>
+
+**Since:** 0.3.1
 
 --------------------
 
@@ -316,6 +400,20 @@ Map a byte array to a the corresponding NDEF record type.
 | **`separator`** | <code>string</code> | The separator which is used between each byte.           | <code>''</code>   | 0.3.1 |
 
 
+#### ConvertHexToNumberOptions
+
+| Prop      | Type                | Description                                  | Since |
+| --------- | ------------------- | -------------------------------------------- | ----- |
+| **`hex`** | <code>string</code> | The hex string to convert to a number array. | 0.3.1 |
+
+
+#### ConvertNumberToHexOptions
+
+| Prop         | Type                | Description                            | Since |
+| ------------ | ------------------- | -------------------------------------- | ----- |
+| **`number`** | <code>number</code> | The number to convert to a hex string. | 0.3.1 |
+
+
 #### ConvertStringToBytesOptions
 
 | Prop       | Type                | Description                            | Since |
@@ -361,10 +459,11 @@ Map a byte array to a the corresponding NDEF record type.
 
 #### CreateNdefUriRecordOptions
 
-| Prop      | Type                            | Since |
-| --------- | ------------------------------- | ----- |
-| **`id`**  | <code>string \| number[]</code> | 0.0.1 |
-| **`uri`** | <code>string \| number[]</code> | 0.0.1 |
+| Prop                 | Type                            | Description              | Default        | Since |
+| -------------------- | ------------------------------- | ------------------------ | -------------- | ----- |
+| **`id`**             | <code>string \| number[]</code> |                          |                | 0.0.1 |
+| **`uri`**            | <code>string \| number[]</code> |                          |                | 0.0.1 |
+| **`identifierCode`** | <code>number</code>             | The URI identifier code. | <code>0</code> | 0.3.1 |
 
 
 #### CreateNdefAbsoluteUriRecordOptions
@@ -394,14 +493,21 @@ Map a byte array to a the corresponding NDEF record type.
 | **`type`**    | <code>string \| number[]</code> | The domain-specific type of data.        | 0.0.1 |
 
 
-#### GetTextFromNdefTextRecordOptions
+#### GetIdentifierCodeFromNdefUriRecordOptions
+
+| Prop         | Type                                              | Since |
+| ------------ | ------------------------------------------------- | ----- |
+| **`record`** | <code><a href="#ndefrecord">NdefRecord</a></code> | 0.3.1 |
+
+
+#### GetLanguageFromNdefTextRecordOptions
 
 | Prop         | Type                                              | Since |
 | ------------ | ------------------------------------------------- | ----- |
 | **`record`** | <code><a href="#ndefrecord">NdefRecord</a></code> | 0.0.1 |
 
 
-#### GetLanguageFromNdefTextRecordOptions
+#### GetTextFromNdefTextRecordOptions
 
 | Prop         | Type                                              | Since |
 | ------------ | ------------------------------------------------- | ----- |
@@ -436,5 +542,47 @@ Map a byte array to a the corresponding NDEF record type.
 | **`SmartPoster`**        | <code>'Sp'</code>              | 0.0.1 |
 | **`Text`**               | <code>'T'</code>               | 0.0.1 |
 | **`Uri`**                | <code>'U'</code>               | 0.0.1 |
+
+
+#### UriIdentifierCode
+
+| Members            | Value           | Description                                           | Since |
+| ------------------ | --------------- | ----------------------------------------------------- | ----- |
+| **`None`**         | <code>0</code>  | No prepending is done.                                | 0.3.1 |
+| **`HttpWww`**      | <code>1</code>  | `http://www.` is prepended to the URI.                | 0.3.1 |
+| **`HttpsWww`**     | <code>2</code>  | `https://www.` is prepended to the URI.               | 0.3.1 |
+| **`Http`**         | <code>3</code>  | `http:` is prepended to the URI.                      | 0.3.1 |
+| **`Https`**        | <code>4</code>  | `https:` is prepended to the URI.                     | 0.3.1 |
+| **`Tel`**          | <code>5</code>  | `tel:` is prepended to the URI.                       | 0.3.1 |
+| **`Mailto`**       | <code>6</code>  | `mailto:` is prepended to the URI.                    | 0.3.1 |
+| **`FtpAnonymous`** | <code>7</code>  | `ftp://anonymous:anonymous@` is prepended to the URI. | 0.3.1 |
+| **`FtpFtp`**       | <code>8</code>  | `ftp://ftp.` is prepended to the URI.                 | 0.3.1 |
+| **`Ftps`**         | <code>9</code>  | `ftps://` is prepended to the URI.                    | 0.3.1 |
+| **`Sftp`**         | <code>10</code> | `sftp://` is prepended to the URI.                    | 0.3.1 |
+| **`Smb`**          | <code>11</code> | `smb://` is prepended to the URI.                     | 0.3.1 |
+| **`Nfs`**          | <code>12</code> | `nfs://` is prepended to the URI.                     | 0.3.1 |
+| **`Ftp`**          | <code>13</code> | `ftp://` is prepended to the URI.                     | 0.3.1 |
+| **`Dav`**          | <code>14</code> | `dav://` is prepended to the URI.                     | 0.3.1 |
+| **`News`**         | <code>15</code> | `news:` is prepended to the URI.                      | 0.3.1 |
+| **`Telnet`**       | <code>16</code> | `telnet://` is prepended to the URI.                  | 0.3.1 |
+| **`Imap`**         | <code>17</code> | `imap:` is prepended to the URI.                      | 0.3.1 |
+| **`Rtsp`**         | <code>18</code> | `rtsp://` is prepended to the URI.                    | 0.3.1 |
+| **`Urn`**          | <code>19</code> | `urn:` is prepended to the URI.                       | 0.3.1 |
+| **`Pop`**          | <code>20</code> | `pop:` is prepended to the URI.                       | 0.3.1 |
+| **`Sip`**          | <code>21</code> | `sip:` is prepended to the URI.                       | 0.3.1 |
+| **`Sips`**         | <code>22</code> | `sips:` is prepended to the URI.                      | 0.3.1 |
+| **`Tftp`**         | <code>23</code> | `tftp:` is prepended to the URI.                      | 0.3.1 |
+| **`Btspp`**        | <code>24</code> | `btspp://` is prepended to the URI.                   | 0.3.1 |
+| **`Btl2cap`**      | <code>25</code> | `btl2cap://` is prepended to the URI.                 | 0.3.1 |
+| **`Btgoep`**       | <code>26</code> | `btgoep://` is prepended to the URI.                  | 0.3.1 |
+| **`Tcpobex`**      | <code>27</code> | `tcpobex://` is prepended to the URI.                 | 0.3.1 |
+| **`Irdaobex`**     | <code>28</code> | `irdaobex://` is prepended to the URI.                | 0.3.1 |
+| **`File`**         | <code>29</code> | `file://` is prepended to the URI.                    | 0.3.1 |
+| **`UrnEpcId`**     | <code>30</code> | `urn:epc:id:` is prepended to the URI.                | 0.3.1 |
+| **`UrnEpcTag`**    | <code>31</code> | `urn:epc:tag:` is prepended to the URI.               | 0.3.1 |
+| **`UrnEpcPat`**    | <code>32</code> | `urn:epc:pat:` is prepended to the URI.               | 0.3.1 |
+| **`UrnEpcRaw`**    | <code>33</code> | `urn:epc:raw:` is prepended to the URI.               | 0.3.1 |
+| **`UrnEpc`**       | <code>34</code> | `urn:epc:` is prepended to the URI.                   | 0.3.1 |
+| **`UrnNfc`**       | <code>35</code> | `urn:nfc:` is prepended to the URI.                   | 0.3.1 |
 
 </docgen-api>
