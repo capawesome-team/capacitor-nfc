@@ -88,39 +88,9 @@ This plugin is still **under development**. This is our approximate roadmap:
 
 ## Installation
 
-As long as the project is available as [Sponsorware](#sponsorware), the project will be distributed via GitHub packages.
+See [Getting started with Insiders](https://capawesome.io/insiders/getting-started/?plugin=capacitor-nfc) and follow the instructions to install the plugin.
 
-1. Log in to GitHub package registry ([GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)):
-
-   ```
-   $ npm login --scope=@capawesome-team --auth-type=legacy --registry=https://npm.pkg.github.com
-
-   > Username: USERNAME
-   > Password: TOKEN
-   > Email: PUBLIC-EMAIL-ADDRESS
-   ```
-
-1. In the same directory as your `package.json` file, create or edit an `.npmrc` file to include the following line ([GitHub Docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)):
-   ```
-   @capawesome-team:registry=https://npm.pkg.github.com
-   ```
-1. Install the package with **Capacitor 3**:
-
-   ```bash
-   npm install @capawesome-team/capacitor-nfc@0.0.1
-   npx cap sync
-   ```
-
-   Install the package with **Capacitor 4**:
-
-   ```bash
-   npm install @capawesome-team/capacitor-nfc
-   npx cap sync
-   ```
-
-   🆘 If you get `npm ERR! code E403` as an error during installation, then check if you are already an [Insider Sponsor](https://github.com/sponsors/capawesome-team) of Capawesome on GitHub.
-   If the error remains or you have any other problems please [contact us by mail](mailto:support@capawesome.io) or [create a GitHub discussion](https://docs.github.com/en/discussions/quickstart#creating-a-new-discussion) in this repository.  
-   ⚠️ **Attention**: Be careful not to disclose your npm auth token! If you have any questions (CI configuration etc.) please let us know.
+After that, follow the platform-specific instructions in the sections [Android](#android) and [iOS](#ios).
 
 ### Android
 
