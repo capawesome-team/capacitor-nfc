@@ -378,15 +378,17 @@ Send raw command to the tag and receive the response.
 
 This method must be called from within a `nfcTagScanned` handler.
 
-⚠️ **Experimental:** This method could not be tested extensively yet. Please let us know if you discover any issues!
+⚠️ **Experimental:** This method could not be tested extensively yet. 
+Please let us know if you discover any issues!
 
-⚠️ **Attention**: A bad command can damage the tag forever. Please read the Android and iOS documentation linked below first.
+⚠️ **Attention**: A bad command can damage the tag forever. 
+Please read the Android and iOS documentation linked below first.
 
-More information on how to use this method on **Android**: https://developer.android.com/reference/android/nfc/tech/package-summary
+More information on how to use this method on **Android**: https://bit.ly/3ywSkvT
 
 More information on how to use this method on **iOS** with...
-- ISO 15693-3: https://developer.apple.com/documentation/corenfc/nfciso15693tag/3043799-customcommand
-- FeliCa: https://developer.apple.com/documentation/corenfc/nfcfelicatag/3043786-sendfelicacommand
+- ISO 15693-3: https://apple.co/3Lliaum
+- FeliCa: https://apple.co/3LpvRs6
 
 Only available on Android and iOS.
 
