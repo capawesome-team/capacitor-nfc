@@ -459,11 +459,11 @@ Map a byte array to a the corresponding NDEF record type.
 
 #### CreateNdefUriRecordOptions
 
-| Prop                 | Type                            | Description              | Default        | Since |
-| -------------------- | ------------------------------- | ------------------------ | -------------- | ----- |
-| **`id`**             | <code>string \| number[]</code> |                          |                | 0.0.1 |
-| **`uri`**            | <code>string \| number[]</code> |                          |                | 0.0.1 |
-| **`identifierCode`** | <code>number</code>             | The URI identifier code. | <code>0</code> | 0.3.1 |
+| Prop                 | Type                            | Description              | Default                             | Since |
+| -------------------- | ------------------------------- | ------------------------ | ----------------------------------- | ----- |
+| **`id`**             | <code>string \| number[]</code> |                          |                                     | 0.0.1 |
+| **`uri`**            | <code>string \| number[]</code> |                          |                                     | 0.0.1 |
+| **`identifierCode`** | <code>number</code>             | The URI identifier code. | <code>UriIdentifierCode.None</code> | 0.3.1 |
 
 
 #### CreateNdefAbsoluteUriRecordOptions
