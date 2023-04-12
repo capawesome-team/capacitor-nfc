@@ -72,6 +72,10 @@ This plugin is still **under development**. This is our approximate roadmap:
    Please submit your feature request [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will then review it and possibly put it on our roadmap.
 1. **What do I do when I have found a bug?**  
    Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will take a look at it as soon as possible.
+   
+## Guides
+
+- [Announcing the Capacitor NFC Plugin](https://capawesome.io/blog/announcing-the-capacitor-nfc-plugin/)
 
 ## Installation
 
