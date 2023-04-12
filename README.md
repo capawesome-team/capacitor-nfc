@@ -1,19 +1,6 @@
-<p align="center"><br><img src="https://avatars.githubusercontent.com/u/105555861" width="128" height="128" /></p>
-<h3 align="center">NFC</h3>
-<p align="center"><strong><code>@capawesome-team/capacitor-nfc</code></strong></p>
-<p align="center">
-  Capacitor plugin for reading and writing NFC tags.
-</p>
+# @capawesome-team/capacitor-nfc
 
-<p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" />
-  <!-- <a href="https://github.com/capawesome-team/capacitor-nfc/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capawesome-team/capacitor-nfc/CI/main?style=flat-square" /></a> -->
-  <a href="https://github.com/capawesome-team/capacitor-nfc"><img src="https://img.shields.io/github/license/capawesome-team/capacitor-nfc?style=flat-square" /></a>
-<!-- <br> -->
-  <!-- <a href="https://www.npmjs.com/package/@capawesome/capacitor-nfc"><img src="https://img.shields.io/npm/dw/@capawesome/capacitor-nfc?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capawesome/capacitor-nfc"><img src="https://img.shields.io/npm/v/@capawesome/capacitor-nfc?style=flat-square" /></a> -->
-  <a href="https://github.com/capawesome-team"><img src="https://img.shields.io/badge/part%20of-capawesome-%234f46e5?style=flat-square" /></a>
-</p>
+Capacitor plugin for reading and writing NFC tags.
 
 ## Maintainers
 
@@ -132,7 +119,7 @@ No configuration required for this plugin.
 ```typescript
 import { Nfc, NfcUtils, NfcTagTechType } from '@capawesome-team/capacitor-nfc';
 
-const createNdefTextRecord = async () => {
+const createNdefTextRecord = () => {
   const utils = new NfcUtils();
   const { record } = utils.createNdefTextRecord({ text: 'Capacitor NFC Plugin' });
   return record;
@@ -144,6 +131,7 @@ const write = async () => {
 
     Nfc.addListener('nfcTagScanned', async (event) => {
       await Nfc.write({ message: { records: [record] } });
+      await Nfc.stopScanSession();
       resolve();
     });
 
@@ -153,7 +141,8 @@ const write = async () => {
 
 const read = async () => {
   return new Promise((resolve) => {
-    Nfc.addListener('nfcTagScanned', (event) => {
+    Nfc.addListener('nfcTagScanned', async (event) => {
+      await Nfc.stopScanSession();
       resolve(event.nfcTag);
     });
 
@@ -165,6 +154,7 @@ const makeReadOnly = async () => {
   return new Promise((resolve) => {
     Nfc.addListener('nfcTagScanned', async (event) => {
       await Nfc.makeReadOnly();
+      await Nfc.stopScanSession();
       resolve();
     });
 
@@ -176,6 +166,7 @@ const readSignature = async () => {
   return new Promise((resolve) => {
     Nfc.addListener('nfcTagScanned', async (event) => {
       const { response } = await Nfc.transceive({ techType: NfcTagTechType.NfcA, data: [60, 0] });
+      await Nfc.stopScanSession();
       resolve(response);
     });
 
@@ -187,6 +178,7 @@ const erase = async () => {
   return new Promise((resolve) => {
     Nfc.addListener('nfcTagScanned', async (event) => {
       await Nfc.erase();
+      await Nfc.stopScanSession();
       resolve();
     });
 
@@ -198,6 +190,7 @@ const format = async () => {
   return new Promise((resolve) => {
     Nfc.addListener('nfcTagScanned', async (event) => {
       await Nfc.format();
+      await Nfc.stopScanSession();
       resolve();
     });
 
@@ -271,6 +264,8 @@ startScanSession(options?: StartScanSessionOptions | undefined) => Promise<void>
 
 Start a scan session.
 Only one session can be active at a time.
+
+Stop the session as soon as you are done using `stopScanSession(...)`.
 
 On iOS, this will trigger the NFC Reader Session alert.
 
@@ -769,12 +764,12 @@ Remove all listeners for this plugin.
 
 ## Utils
 
-See [docs/utils/README.md](/docs/utils/README.md).
+See [docs/utils/README.md](https://github.com/capawesome-team/capacitor-nfc/blob/main/docs/utils/README.md).
 
 ## Changelog
 
-See [CHANGELOG.md](/CHANGELOG.md).
+See [CHANGELOG.md](https://github.com/capawesome-team/capacitor-nfc/blob/main/CHANGELOG.md).
 
 ## License
 
-See [LICENSE](/LICENSE).
+See [LICENSE](https://github.com/capawesome-team/capacitor-nfc/blob/main/LICENSE).
