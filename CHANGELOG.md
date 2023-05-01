@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/capawesome-team/sponsorware/compare/v0.3.1...v0.3.2) (2023-05-01)
+
+
+### Bug Fixes
+
+* **android:** `Attempt to get length of null array` ([#12](https://github.com/capawesome-team/sponsorware/issues/12)) ([f271da6](https://github.com/capawesome-team/sponsorware/commit/f271da68533fccbd15c66beb9026af9d97b250a9))
+
 ### [0.3.1](https://github.com/capawesome-team/sponsorware/compare/v0.3.0...v0.3.1) (2023-02-06)
 
 
