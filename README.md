@@ -65,7 +65,7 @@ This plugin is still **under development**. This is our approximate roadmap:
 1. **Which platforms are supported?**  
    This plugin supports Android 5+, iOS 13+ and Web (see [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_NFC_API#browser_compatibility)). But not all platforms and devices support all technologies. You can read more about this in the plugin documentation.
 1. **Which Capacitor versions are supported?**  
-   There is a version for Capacitor 3 and Capacitor 4. However, new updates are only ever provided for the latest Capacitor major version (currently Capacitor 4).
+   There is a version for Capacitor 4 and Capacitor 5. However, new updates are only ever provided for the latest Capacitor major version (currently Capacitor 5).
 1. **What do I do when I have a feature request?**  
    This always depends on your device and the specific tag. The easiest way to find out is to download our demo app and give it a try.
 1. **What do I do when I have a feature request?**  
@@ -377,10 +377,10 @@ Send raw command to the tag and receive the response.
 
 This method must be called from within a `nfcTagScanned` handler.
 
-⚠️ **Experimental:** This method could not be tested extensively yet. 
+⚠️ **Experimental:** This method could not be tested extensively yet.
 Please let us know if you discover any issues!
 
-⚠️ **Attention**: A bad command can damage the tag forever. 
+⚠️ **Attention**: A bad command can damage the tag forever.
 Please read the Android and iOS documentation linked below first.
 
 More information on how to use this method on **Android**: https://bit.ly/3ywSkvT
