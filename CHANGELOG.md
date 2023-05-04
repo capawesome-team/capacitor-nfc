@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/capawesome-team/sponsorware/compare/v0.3.2...v5.0.0) (2023-05-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* This plugin now only supports Capacitor 5.
+
+### Features
+
+* update to Capacitor 5 ([#11](https://github.com/capawesome-team/sponsorware/issues/11)) ([4221923](https://github.com/capawesome-team/sponsorware/commit/4221923be3a40016b5dec50a1a5ede919cf227b7))
+
+
+### Bug Fixes
+
+* **android:** `Cannot invoke method toList() on null object` ([00f9e96](https://github.com/capawesome-team/sponsorware/commit/00f9e960cb9559a87d999e2b2169c066c1a102f2))
+
 ### [0.3.2](https://github.com/capawesome-team/sponsorware/compare/v0.3.1...v0.3.2) (2023-05-01)
 
 
