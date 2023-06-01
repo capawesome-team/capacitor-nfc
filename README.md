@@ -54,7 +54,7 @@ A working example can be found here: [capawesome-team/capacitor-nfc-demo](https:
 
 This plugin is still **under development**. This is our approximate roadmap:
 
-| Q1 2023                |
+| Q4 2023                |
 | ---------------------- |
 | - Android Reader Mode ([#8](https://github.com/capawesome-team/capacitor-nfc/issues/8))  |
 
