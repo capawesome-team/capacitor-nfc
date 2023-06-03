@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.1](https://github.com/capawesome-team/sponsorware/compare/v5.0.0...v5.0.1) (2023-06-03)
+
+
+### Bug Fixes
+
+* **android:** `format()` method failed on some tags ([#13](https://github.com/capawesome-team/sponsorware/issues/13)) ([43f7290](https://github.com/capawesome-team/sponsorware/commit/43f7290d2bf4846aa7b037566a1f83e32383d269))
+
 ## [5.0.0](https://github.com/capawesome-team/sponsorware/compare/v0.3.2...v5.0.0) (2023-05-04)
 
 
