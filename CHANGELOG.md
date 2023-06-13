@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2](https://github.com/capawesome-team/sponsorware/compare/v5.0.1...v5.0.2) (2023-06-13)
+
+
+### Bug Fixes
+
+* **android:** `ex.getMessage()` could be `null` ([#14](https://github.com/capawesome-team/sponsorware/issues/14)) ([84d5952](https://github.com/capawesome-team/sponsorware/commit/84d5952b4abd52f69a9642c05ee9c74b4bb1c421))
+
 ### [5.0.1](https://github.com/capawesome-team/sponsorware/compare/v5.0.0...v5.0.1) (2023-06-03)
 
 
