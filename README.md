@@ -79,7 +79,7 @@ This plugin is still **under development**. This is our approximate roadmap:
 
 ## Installation
 
-See [Getting started with Insiders](https://capawesome.io/insiders/getting-started/?plugin=capacitor-nfc) and follow the instructions to install the plugin.
+See [Getting started with Insiders](https://capawesome.io/sponsors/insiders/getting-started/?plugin=capacitor-nfc) and follow the instructions to install the plugin.
 
 After that, follow the platform-specific instructions in the sections [Android](#android) and [iOS](#ios).
 
