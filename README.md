@@ -2,27 +2,6 @@
 
 Capacitor plugin for reading and writing NFC tags.
 
-## Maintainers
-
-| Maintainer | GitHub                                    | Social                                        |
-| ---------- | ----------------------------------------- | --------------------------------------------- |
-| Robin Genz | [robingenz](https://github.com/robingenz) | [@robin_genz](https://twitter.com/robin_genz) |
-
-## Sponsors
-
-This is an MIT-licensed open source project.
-It can grow thanks to the support by these awesome people.
-If you'd like to join them, please read more [here](https://github.com/sponsors/capawesome-team).
-
-### Base Sponsor
-
-<a href="https://nfc21.de/?_locale=en&utm_source=github&utm_medium=referral&utm_campaign=capawesome" target="_blank">
-<p align="center"><br><img src="https://capawesome.io/assets/images/sponsors/nfc21-logo.png" width="215" /></p>
-<h4 align="center">NFC21 - NFC Tag Shop and Service Provider</h4>
-</a>
-
-<!-- sponsors --><!-- sponsors -->
-
 ## Sponsorware
 
 This project is available as **Sponsorware**.
@@ -50,29 +29,6 @@ A working example can be found here: [capawesome-team/capacitor-nfc-demo](https:
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://user-images.githubusercontent.com/13857929/184409092-7fdc3a77-67b1-4155-b1b1-0fd34a92a77b.gif" width="324" /> | <img src="https://user-images.githubusercontent.com/13857929/184409000-a81243a3-93e5-4d51-817a-e006c0a385cf.gif" width="266" /> |
 
-## Roadmap
-
-This plugin is still **under development**. This is our approximate roadmap:
-
-| Q4 2023                |
-| ---------------------- |
-| - Android Reader Mode ([#8](https://github.com/capawesome-team/capacitor-nfc/issues/8))  |
-
-⚠️ **Disclaimer**: This roadmap does not represent a commitment, guarantee, obligation or promise to deliver any product or feature, or to deliver any product and feature by any particular date, and is intended to outline the general development plans. You should not rely on this roadmap to make any sponsorship decision.
-
-## FAQ
-
-1. **Which platforms are supported?**  
-   This plugin supports Android 5+, iOS 13+ and Web (see [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Web_NFC_API#browser_compatibility)). But not all platforms and devices support all technologies. You can read more about this in the plugin documentation.
-1. **Which Capacitor versions are supported?**  
-   There is a version for Capacitor 4 and Capacitor 5. However, new updates are only ever provided for the latest Capacitor major version (currently Capacitor 5).
-1. **What do I do when I have a feature request?**  
-   This always depends on your device and the specific tag. The easiest way to find out is to download our demo app and give it a try.
-1. **What do I do when I have a feature request?**  
-   Please submit your feature request [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will then review it and possibly put it on our roadmap.
-1. **What do I do when I have found a bug?**  
-   Bug reports have top priority. Please submit your bug report [here](https://github.com/capawesome-team/capacitor-nfc/issues/new/choose). We will take a look at it as soon as possible.
-   
 ## Guides
 
 - [Announcing the Capacitor NFC Plugin](https://capawesome.io/blog/announcing-the-capacitor-nfc-plugin/)
