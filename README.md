@@ -666,6 +666,7 @@ Remove all listeners for this plugin.
 | **`Ndef`**             | <code>'NDEF'</code>              | 0.0.1 |
 | **`MifareClassic`**    | <code>'MIFARE_CLASSIC'</code>    | 0.0.1 |
 | **`MifareDesfire`**    | <code>'MIFARE_DESFIRE'</code>    | 5.1.0 |
+| **`MifarePlus`**       | <code>'MIFARE_PLUS'</code>       | 5.1.0 |
 | **`MifareUltralight`** | <code>'MIFARE_ULTRALIGHT'</code> | 0.0.1 |
 | **`NfcBarcode`**       | <code>'NFC_BARCODE'</code>       | 0.0.1 |
 | **`NdefFormatable`**   | <code>'NDEF_FORMATABLE'</code>   | 0.0.1 |
