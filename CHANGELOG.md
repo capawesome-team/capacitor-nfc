@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/capawesome-team/sponsorware/compare/v5.0.2...v5.1.0) (2024-01-18)
+
+
+### Features
+
+* **ios:** add support for Iso7816 ([#17](https://github.com/capawesome-team/sponsorware/issues/17)) ([1cafc38](https://github.com/capawesome-team/sponsorware/commit/1cafc383ca95059bfd3bce1f064949895805a712))
+* **ios:** support MIFARE DESFire in `transceive(...)` method ([#15](https://github.com/capawesome-team/sponsorware/issues/15)) ([60194a1](https://github.com/capawesome-team/sponsorware/commit/60194a179b9627d3ecf61333f6027d4ade1adf08))
+
+
+### Bug Fixes
+
+* **ios:** detect `NfcTagTechType.NfcV` correctly ([5570562](https://github.com/capawesome-team/sponsorware/commit/5570562449151d007d58d799bf72b9258a39823d))
+* **ios:** support `MIFARE_PLUS` and `MIFARE_ULTRALIGHT` in `transceive(...)` method ([72ec3ae](https://github.com/capawesome-team/sponsorware/commit/72ec3ae7a2030c014ce866c9dcfde6553ae96364))
+* retain `nfcTagScanned` event until consumed ([#16](https://github.com/capawesome-team/sponsorware/issues/16)) ([3ef3dee](https://github.com/capawesome-team/sponsorware/commit/3ef3deeb5b32f76105af53ada282d9abf83de28e))
+
 ### [5.0.2](https://github.com/capawesome-team/sponsorware/compare/v5.0.1...v5.0.2) (2023-06-13)
 
 
