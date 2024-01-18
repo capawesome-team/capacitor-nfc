@@ -1,3 +1,9 @@
+## ⚠️ Deprecated repository
+
+**This project has been moved to the following monorepo: [capawesome-team/capacitor-plugins](https://github.com/capawesome-team/capacitor-plugins).**
+
+-----
+
 # @capawesome-team/capacitor-nfc
 
 Capacitor plugin for reading and writing NFC tags.
