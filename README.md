@@ -656,20 +656,21 @@ Remove all listeners for this plugin.
 
 #### NfcTagTechType
 
-| Members                | Value                            | Since |
-| ---------------------- | -------------------------------- | ----- |
-| **`NfcA`**             | <code>'NFC_A'</code>             | 0.0.1 |
-| **`NfcB`**             | <code>'NFC_B'</code>             | 0.0.1 |
-| **`NfcF`**             | <code>'NFC_F'</code>             | 0.0.1 |
-| **`NfcV`**             | <code>'NFC_V'</code>             | 0.0.1 |
-| **`IsoDep`**           | <code>'ISO_DEP'</code>           | 0.0.1 |
-| **`Ndef`**             | <code>'NDEF'</code>              | 0.0.1 |
-| **`MifareClassic`**    | <code>'MIFARE_CLASSIC'</code>    | 0.0.1 |
-| **`MifareDesfire`**    | <code>'MIFARE_DESFIRE'</code>    | 5.1.0 |
-| **`MifarePlus`**       | <code>'MIFARE_PLUS'</code>       | 5.1.0 |
-| **`MifareUltralight`** | <code>'MIFARE_ULTRALIGHT'</code> | 0.0.1 |
-| **`NfcBarcode`**       | <code>'NFC_BARCODE'</code>       | 0.0.1 |
-| **`NdefFormatable`**   | <code>'NDEF_FORMATABLE'</code>   | 0.0.1 |
+| Members                | Value                            | Description                                                                   | Since |
+| ---------------------- | -------------------------------- | ----------------------------------------------------------------------------- | ----- |
+| **`NfcA`**             | <code>'NFC_A'</code>             | The NFC-A (ISO 14443-3A) tag technology. Only available on Android.           | 0.0.1 |
+| **`NfcB`**             | <code>'NFC_B'</code>             | The NFC-B (ISO 14443-3B) tag technology. Only available on Android.           | 0.0.1 |
+| **`NfcF`**             | <code>'NFC_F'</code>             | The NFC-F (JIS 6319-4) tag technology. Only available on Android and iOS.     | 0.0.1 |
+| **`NfcV`**             | <code>'NFC_V'</code>             | The NFC-V (ISO 15693) tag technology. Only available on Android and iOS.      | 0.0.1 |
+| **`IsoDep`**           | <code>'ISO_DEP'</code>           | The ISO-DEP (ISO 14443-4) tag technology. Only available on Android.          | 0.0.1 |
+| **`Iso7816`**          | <code>'ISO_7816'</code>          | The ISO 7816 tag technology. Only available on iOS.                           | 5.1.0 |
+| **`Ndef`**             | <code>'NDEF'</code>              | The NDEF tag technology. Only available on Android.                           | 0.0.1 |
+| **`MifareClassic`**    | <code>'MIFARE_CLASSIC'</code>    | The MIFARE Classic tag technology. Only available on Android.                 | 0.0.1 |
+| **`MifareDesfire`**    | <code>'MIFARE_DESFIRE'</code>    | The MIFARE Desfire tag technology. Only available on iOS.                     | 5.1.0 |
+| **`MifarePlus`**       | <code>'MIFARE_PLUS'</code>       | The MIFARE Plus tag technology. Only available on iOS.                        | 5.1.0 |
+| **`MifareUltralight`** | <code>'MIFARE_ULTRALIGHT'</code> | The MIFARE Ultralight tag technology. Only available on Android and iOS.      | 0.0.1 |
+| **`NfcBarcode`**       | <code>'NFC_BARCODE'</code>       | The technology of a tag containing just a barcode. Only available on Android. | 0.0.1 |
+| **`NdefFormatable`**   | <code>'NDEF_FORMATABLE'</code>   | The NDEF formatable tag technology. Only available on Android.                | 0.0.1 |
 
 
 #### PollingOption
@@ -709,18 +710,18 @@ Remove all listeners for this plugin.
 
 #### NfcTagType
 
-| Members                 | Value                              | Since |
-| ----------------------- | ---------------------------------- | ----- |
-| **`NfcForumType1`**     | <code>'NFC_FORUM_TYPE_1'</code>    | 0.0.1 |
-| **`NfcForumType2`**     | <code>'NFC_FORUM_TYPE_2'</code>    | 0.0.1 |
-| **`NfcForumType3`**     | <code>'NFC_FORUM_TYPE_3'</code>    | 0.0.1 |
-| **`NfcForumType4`**     | <code>'NFC_FORUM_TYPE_4'</code>    | 0.0.1 |
-| **`MifareClassic`**     | <code>'MIFARE_CLASSIC'</code>      | 0.0.1 |
-| **`MifareDesfire`**     | <code>'MIFARE_DESFIRE'</code>      | 0.0.1 |
-| **`MifarePlus`**        | <code>'MIFARE_PLUS'</code>         | 0.0.1 |
-| **`MifarePro`**         | <code>'MIFARE_PRO'</code>          | 0.0.1 |
-| **`MifareUltralight`**  | <code>'MIFARE_ULTRALIGHT'</code>   | 0.0.1 |
-| **`MifareUltralightC`** | <code>'MIFARE_ULTRALIGHT_C'</code> | 0.0.1 |
+| Members                 | Value                              | Description                        | Since |
+| ----------------------- | ---------------------------------- | ---------------------------------- | ----- |
+| **`NfcForumType1`**     | <code>'NFC_FORUM_TYPE_1'</code>    | Only available on Android.         | 0.0.1 |
+| **`NfcForumType2`**     | <code>'NFC_FORUM_TYPE_2'</code>    | Only available on Android.         | 0.0.1 |
+| **`NfcForumType3`**     | <code>'NFC_FORUM_TYPE_3'</code>    | Only available on Android and iOS. | 0.0.1 |
+| **`NfcForumType4`**     | <code>'NFC_FORUM_TYPE_4'</code>    | Only available on Android.         | 0.0.1 |
+| **`MifareClassic`**     | <code>'MIFARE_CLASSIC'</code>      | Only available on Android.         | 0.0.1 |
+| **`MifareDesfire`**     | <code>'MIFARE_DESFIRE'</code>      |                                    | 0.0.1 |
+| **`MifarePlus`**        | <code>'MIFARE_PLUS'</code>         | Only available on Android.         | 0.0.1 |
+| **`MifarePro`**         | <code>'MIFARE_PRO'</code>          | Only available on Android.         | 0.0.1 |
+| **`MifareUltralight`**  | <code>'MIFARE_ULTRALIGHT'</code>   | Only available on Android.         | 0.0.1 |
+| **`MifareUltralightC`** | <code>'MIFARE_ULTRALIGHT_C'</code> | Only available on Android.         | 0.0.1 |
 
 </docgen-api>
 
